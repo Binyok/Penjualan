@@ -175,3 +175,45 @@ footer p {
     background-color: #f0f0f0; /* Warna latar belakang saat hover */
     color: #333; /* Warna teks saat hover */
 }
+section#home {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.produk {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.produk:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.produk img {
+    transition: transform 0.3s ease;
+}
+
+.produk:hover img {
+    transform: translateY(-5px);
+}
+.produk {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.produk:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.produk img {
+    transition: transform 0.3s ease;
+}
+
+.produk:hover img {
+    transform: translateY(-5px);
+}
