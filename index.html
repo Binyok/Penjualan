@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Penjualan</title>
-    <link rel="stylesheet" href="styles.css"> <!-- File CSS untuk styling -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1 style="text-align: center;">Website Penjualan</h1>
+            <h1 class="site-title">Website Penjualan</h1>
             <nav>
-                <ul>
+                <ul class="nav-list">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#produk">Produk</a></li>
                     <li><a href="#kontak">Kontak</a></li>
@@ -22,50 +22,49 @@
     </header>
 
     <section id="home" class="hero">
-        <div class="container">
+        <div class="container hero-content">
             <h2>Selamat Datang di Website Penjualan</h2>
-            <p>Website ini berisi produk yang kami jual untuk tugas sekolah</p>
+           <center> <p>Website ini berisi produk yang kami jual untuk tugas sekolah, ya begitulaaaaa</p></center>
         </div>
     </section>
 
-    <section id="produk">
+    <section id="produk" class="full-background">
         <div class="container">
             <h2>Produk Kami</h2>
-            <div class="produk">
-                <img src="gbr1.jpg" alt="Produk 1">
-                <h3>Sosis bakar</h3>
-                <p>Sebuah sosis yang di bakar menggunakan arang lalu di beri mayoniase dan saos</p>
-                <button>Beli</button>
+            <div class="produk-card">
+                <img src="1.jpg" alt="Produk 1">
+                <div class="produk-info">
+                    <h3>Salad Buah</h3>
+                    <p>Salad buah yang berisi buah semangka, melon, jeruk, apel, dan buah naga. Dengan keju dan mayonaise yang dicampur susu kental manis</p>
+                    <button>Beli</button>
+                </div>
             </div>
-            <div class="produk">
-                <img src="gbr1.jpg" alt="Produk 2">
-                <h3>Salad Buah</h3>
-                <p>Salad yang berisi buah semangka, melon, buah naga, dan jeruk, serta dengan ditambahkan mayoniase, keju dan susu</p>
-                <button>Beli</button>
-            </div>
-            <!-- Tambahkan produk lain sesuai kebutuhan -->
         </div>
     </section>
+    
 
-    <section id="kontak" class="kontak-section">
+    <section id="kontak" class="full-background">
         <div class="container">
             <h2>Kontak</h2>
-            <p>Jika Anda memiliki pertanyaan atau ingin melakukan pemesanan, silakan hubungi kami:</p>
+            <h3>Jika Anda memiliki pertanyaan atau ingin melakukan pemesanan, silakan hubungi kami:</h3><br><br><br>
             <div class="kontak-flex">
                 <div class="kontak-item">
-                    <a href="https://wa.me/+62 838-4636-1664"><i class="fab fa-whatsapp"></i> Abim</a>
+                    <a href="https://wa.me/+6283846361664"><i class="fab fa-whatsapp"></i> Abim</a>
+                </div>
+                <div class="kontak-item">
+                    <a href="https://wa.me/+6281353653364"><i class="fab fa-whatsapp"></i> Satrio</a>
                 </div>
                 <div class="kontak-item">
                     <a href="https://wa.me/082141283871"><i class="fab fa-whatsapp"></i> Angga</a>
                 </div>
                 <div class="kontak-item">
-                    <a href="https://wa.me/+62 838-4894-7221"><i class="fab fa-whatsapp"></i> Ainnur</a>
+                    <a href="https://wa.me/+6283848947221"><i class="fab fa-whatsapp"></i> Ainnur</a>
                 </div>
                 <div class="kontak-item">
-                    <a href="https://wa.me/+62 822-4408-9648"><i class="fab fa-whatsapp"></i> Naufal</a>
+                    <a href="https://wa.me/+6282244089648"><i class="fab fa-whatsapp"></i> Naufal</a>
                 </div>
                 <div class="kontak-item">
-                    <a href="https://wa.me/+62 812-4256-0549"><i class="fab fa-whatsapp"></i> Jafar</a>
+                    <a href="https://wa.me/+6281242560549"><i class="fab fa-whatsapp"></i> Jafar</a>
                 </div>
             </div>
         </div>
@@ -76,5 +75,29 @@
             <p>&copy; 2024 Website Penjualan Amba Food. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const sectionID = this.getAttribute('href').substring(1);
+                const section = document.getElementById(sectionID);
+                const headerOffset = document.querySelector('header').offsetHeight;
+                const sectionPosition = section.offsetTop - headerOffset;
+                window.scrollTo({
+                    behavior: 'smooth',
+                    top: sectionPosition
+                });
+            });
+        });
+
+        const homeSection = document.getElementById('home');
+        const homeBackground = homeSection.style.backgroundImage;
+
+        window.addEventListener('scroll', function() {
+            const offset = window.pageYOffset;
+            homeSection.style.backgroundPositionY = offset * 0.5 + 'px'; // Sesuaikan kecepatan efek parallax
+        });
+    </script>
 </body>
 </html>
