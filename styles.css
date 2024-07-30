@@ -10,113 +10,164 @@ header {
     background-color: #333;
     color: #fff;
     padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-header h1 {
+.site-title {
     margin-bottom: 0.5rem;
     font-size: 2.5rem;
+    text-align: center;
 }
 
-nav ul {
+.nav-list {
     list-style-type: none;
     text-align: center;
     margin-top: 1rem;
 }
 
-nav ul li {
+.nav-list li {
     display: inline;
     margin-right: 1rem;
 }
 
-nav ul li a {
+.nav-list li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: #4CAF50;
 }
 
 /* Styling sections */
 section {
     padding: 4rem 0;
     text-align: center;
-}
-
-section#home {
-    background-image: url('background.jpg');
+    color: #fff; /* Default text color for sections */
     background-size: cover;
     background-position: center;
-    color: #fff;
-    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero {
+    background-image: url('Yellow and Brown Salad Photo Food Poster.png'); /* Ganti dengan path foto latar belakang home */
+    background-attachment: fixed; /* Efek parallax */
+    height: 100vh; /* Tinggi viewport */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
-.hero {
-    background-color: rgba(0, 0, 0, 0.5); /* Ubah transparansi sesuai kebutuhan */
-}
-
-section#home h2 {
-    margin-bottom: 1rem;
+.hero-content h2 {
     font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-section#produk {
-    background-color: #f8f8f8;
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+/* Background untuk produk dan kontak */
+.full-background {
+    background-image: url('Yellow and Brown Salad Photo Food Poster.png'); /* Ganti dengan path foto latar belakang produk dan kontak */
+    background-attachment: fixed; /* Efek parallax */
+    background-color: rgba(0, 0, 0, 0.5); /* Transparansi agar teks lebih mudah dibaca */
+    background-bluer: 5px; /* Blur untuk efek estetika */
+}
+
+section#produk, section#kontak {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparansi agar teks lebih mudah dibaca */
 }
 
 .produk {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9); /* Latar belakang semi-transparan */
     padding: 2rem;
-    margin-bottom: 2rem;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-.produk:hover {
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin: 2rem auto;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
 }
 
 .produk img {
     max-width: 100%;
     height: auto;
     margin-bottom: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    border-radius: 10px;
 }
-
-.produk:hover img {
-    transform: scale(1.05);
+#produk h2{
+    color: black;
 }
-
 .produk h3 {
     margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    color: black;
 }
 
 .produk p {
     margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: black;
 }
 
 .produk button {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     cursor: pointer;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .produk button:hover {
     background-color: #45a049;
+}
+#kontak h2 {
+    color: black;
+}
+#kontak h3 {
+    color: black;
+}
+
+/* Styling kontak section */
+.kontak-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.kontak-item {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+.kontak-item a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #25D366; /* Warna hijau WhatsApp */
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.kontak-item a i {
+    margin-right: 8px;
+}
+
+.kontak-item a:hover {
+    background-color: #128C7E;
+    transform: scale(1.05);
 }
 
 /* Styling footer */
@@ -125,95 +176,107 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
 footer p {
     margin-bottom: 0;
 }
 
-/* Styling kontak section */
-.kontak-section {
-    background-color: #fff;
-    padding: 4rem 0;
-}
+/* Responsiveness */
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
 
-.kontak-section h2 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-}
+    .hero-content p {
+        font-size: 1rem;
+    }
 
-.kontak-section p {
+    section#produk h2, section#kontak h2 {
+        font-size: 1.5rem;
+    }
+
+    .produk, .kontak-item {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+/* Styling Produk */
+.produk-card {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparan */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan */
+    overflow: hidden; /* Menghilangkan overflow pada sudut melengkung */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 2rem;
-    color: #333;
-}
-
-.kontak-flex {
     display: flex;
-    justify-content: center; /* Memusatkan secara horizontal */
-    align-items: center; /* Memusatkan secara vertikal */
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px; /* Maksimal lebar produk */
+    margin: 0 auto; /* Memusatkan produk */
 }
 
-.kontak-item {
-    margin-right: 20px; /* Jarak antara setiap tautan */
+.produk-card img {
+    width: 100%; /* Membuat gambar responsif */
+    height: auto;
+    object-fit: cover; /* Mengisi area gambar */
+    max-height: 400px; /* Batas tinggi maksimal gambar */
+    transition: transform 0.3s ease;
 }
 
-.kontak-flex a {
-    text-decoration: none;
+.produk-card:hover img {
+    transform: scale(1.05); /* Zoom gambar saat hover */
+}
+
+.produk-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.produk-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
     color: #333;
-    display: inline-block;
-    padding: 10px; /* Padding untuk menambahkan ruang di sekitar ikon dan teks */
-    border: 1px solid #ccc; /* Garis tepi */
-    border-radius: 5px; /* Sudut bulat */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transisi saat hover */
 }
 
-.kontak-flex a i {
-    margin-right: 5px;
+.produk-info p {
+    margin-bottom: 1rem;
+    color: #666;
 }
 
-.kontak-flex a:hover {
-    background-color: #f0f0f0; /* Warna latar belakang saat hover */
-    color: #333; /* Warna teks saat hover */
-}
-section#home {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.produk {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    position: relative;
+.produk-info button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.produk:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+.produk-info button:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Zoom tombol saat hover */
 }
 
-.produk img {
-    transition: transform 0.3s ease;
-}
+/* Styling Responsif untuk Produk */
+@media (max-width: 768px) {
+    .produk-card {
+        width: 90%;
+        margin: 0 auto;
+    }
 
-.produk:hover img {
-    transform: translateY(-5px);
-}
-.produk {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    position: relative;
-}
+    .produk-info h3 {
+        font-size: 1.5rem;
+    }
 
-.produk:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-}
+    .produk-info p {
+        font-size: 0.9rem;
+    }
 
-.produk img {
-    transition: transform 0.3s ease;
-}
-
-.produk:hover img {
-    transform: translateY(-5px);
+    .produk-info button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
 }
