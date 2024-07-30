@@ -24,7 +24,7 @@
     <section id="home" class="hero">
         <div class="container hero-content">
             <h2>Selamat Datang di Website Penjualan</h2>
-           <center> <p>Website ini berisi produk yang kami jual untuk tugas sekolah, ya begitulaaaaa</p></center>
+            <p>Website ini berisi produk yang kami jual untuk tugas sekolah, ya begitulaaaaa</p>
         </div>
     </section>
 
@@ -41,11 +41,10 @@
         </div>
     </section>
     
-
     <section id="kontak" class="full-background">
         <div class="container">
             <h2>Kontak</h2>
-            <h3>Jika Anda memiliki pertanyaan atau ingin melakukan pemesanan, silakan hubungi kami:</h3><br><br><br>
+            <h3>Jika Anda memiliki pertanyaan atau ingin melakukan pemesanan, silakan hubungi kami:</h3>
             <div class="kontak-flex">
                 <div class="kontak-item">
                     <a href="https://wa.me/+6283846361664"><i class="fab fa-whatsapp"></i> Abim</a>
@@ -91,8 +90,6 @@
         });
 
         const homeSection = document.getElementById('home');
-        const homeBackground = homeSection.style.backgroundImage;
-
         window.addEventListener('scroll', function() {
             const offset = window.pageYOffset;
             homeSection.style.backgroundPositionY = offset * 0.5 + 'px'; // Sesuaikan kecepatan efek parallax
