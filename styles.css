@@ -230,3 +230,28 @@ footer p {
         transform: translateY(0);
     }
 }
+/* Styling hero section */
+.hero {
+    background-image: url('Yellow and Brown Salad Photo Food Poster.png'); /* Ganti dengan path foto latar belakang home */
+    background-attachment: fixed; /* Efek parallax */
+    height: 100vh; /* Tinggi viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.centered-text {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
